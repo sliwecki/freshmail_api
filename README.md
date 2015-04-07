@@ -3,7 +3,7 @@ Rails gem for fast Freshmail integration
 
 Documentation of Freshmail API http://freshmail.pl/wp-content/uploads/2013/04/REST_API_v1.0.19.pdf
 
-## Do you like it? Give me star ;) Thank you!
+##### Do you like it ? Give me star ;) Thank you!
 
 
 ## Installation
@@ -35,28 +35,29 @@ end
 
 Next, you should use available methods:
 
-1. Test your connection
+##### 1) Test your connection
+
 GET:
 ```ruby
 FreshmailApi.get_ping
 ```
+
 POST:
 ```ruby
 FreshmailApi.post_ping({data: 'some data'})
-```
+``` 
 
-
-2. Send mail:
+##### 2) Send mail:
 ```ruby
 FreshmailApi.send_mail(subscriber: "subscriber@mail.com", subject: "test", text: "pure text message")
 or
 FreshmailApi.send_mail(subscriber: "subscriber@mail.com", subject: "test", html: "message with html tags")
 ```
--require options:
+>- require options:
 :subscriber,
 :subject,
 :html or :text
--optional options:
+>- optional options:
 :from,
 :from_name,
 :reply_to,
@@ -66,54 +67,54 @@ FreshmailApi.send_mail(subscriber: "subscriber@mail.com", subject: "test", html:
 :domain,
 :tag
 
-3. Send sms message (SMS agreement required to send sms):
+##### 3) Send sms message (SMS agreement required to send sms):
 ```ruby
 FreshmailApi.send_sms(gsm: "123456789", text: "hello bro! :)")
 ```
--require options:
+>- require options:
 :gsm,
 :text
--optional options:
+>- optional options:
 :from,
 :single
 
 
-4. Reports:
+##### 4) Reports:
   4.1 Campaigns list
   ```ruby
   FreshmailApi.campaigns_list
   or
   FreshmailApi.campaigns_list(69)
   ```
-  -optional options:
+  >- optional options:
   :page
 
   4.2 Campaign report
   ```ruby
   FreshmailApi.campaign_report(id_hash)
   ```
-  -required options:
+  >- required options:
   :id_hash
 
   4.3 Campaign time details
   ```ruby
   FreshmailApi.campaign_time_details(id_hash)
   ```
-  -required options:
+  >- required options:
   :id_hash
 
 
-5. Campaign:
+##### 5) Campaign:
   5.1 Create:
   ```ruby
   FreshmailApi.create_campaign({options})
   ```
-  -require options:
+  >- require options:
   :name,
   :list or :group,
   :html or :text
-  -optional options:
-  :url,
+  >- optional options:
+  :url, 
   :subject,
   :from_address,
   :from_name,
@@ -124,9 +125,9 @@ FreshmailApi.send_sms(gsm: "123456789", text: "hello bro! :)")
   ```ruby
   FreshmailApi.edit_campaig({options})
   ```
-  require options:
+  >- require options:
   :id_hash
-  optional options:
+  >- optional options:
   :name,
   :url,
   :html,
@@ -143,38 +144,38 @@ FreshmailApi.send_sms(gsm: "123456789", text: "hello bro! :)")
   ```ruby
   FreshmailApi.delete_campaig({options})
   ```
-  require options:
+  >- require options:
   :hash
 
   5.1 Send test campaign:
   ```ruby
   FreshmailApi.send_test_campaig(hash: '4zcnmd2ski', emails: ['test1@email.com', 'test2@email.com'])
   ```
-  require options:
+  >- require options:
   :hash,
   :emails
-  optional options:
+  >- optional options:
   :custom_fields
 
   5.1 Send campaign:
   ```ruby
   FreshmailApi.send_campaig({options})
   ```
-  require options:
+  >- require options:
   :hash
-  optional options:
+  >- optional options:
   :time (format:  YYYY-MM-DD H:i:s)
 
 
-6. Subscriber:
+##### 6) Subscriber:
   6.1 Add:
   ```ruby
   FreshmailApi.add_subscriber({options})
   ```
-  -require options:
+  >- require options:
   :email,
   :list
-  -optional options:
+  >- optional options:
   :state,
   :confirm,
   :custom_fields
@@ -183,18 +184,18 @@ FreshmailApi.send_sms(gsm: "123456789", text: "hello bro! :)")
   ```ruby
   FreshmailApi.edit_subscriber({options})
   ```
-  -require options:
+  >- require options:
   :email,
   :list
-  -optional options:
+  >- optional options:
   :state,
   :custom_fields
 
-  6.3 Add:
+  6.3 Get:
   ```ruby
   FreshmailApi.get_subscriber(email: 'test@email.com', list: '4zcnmd2ski')
   ```
-  -require options:
+  >- require options:
   :email,
   :list
 
@@ -202,7 +203,7 @@ FreshmailApi.send_sms(gsm: "123456789", text: "hello bro! :)")
   ```ruby
   FreshmailApi.delete_subscriber({options})
   ```
-  -require options:
+  >- require options:
   :email,
   :list
 
@@ -210,20 +211,20 @@ FreshmailApi.send_sms(gsm: "123456789", text: "hello bro! :)")
   ```ruby
   FreshmailApi.get_subscriber_history(email: 'test@email.com', list: '4zcnmd2ski', limit: 30)
   ```
-  -require options:
+  >- require options:
   :email,
   :list
-  -optional options:
+  >- optional options:
   :limit (default: 10)
 
   6.6 Add subscribers:
   ```ruby
   FreshmailApi.add_subscribers(subscribers: [{email: 'test@email.com'}, {email: 'test@email.com'}], list: '4zcnmd2ski')
   ```
-  -require options:
+  >- require options:
   :subscribers,
   :list
-  -optional options:
+  >- optional options:
   :state,
   :confirm
 
@@ -231,10 +232,10 @@ FreshmailApi.send_sms(gsm: "123456789", text: "hello bro! :)")
   ```ruby
   FreshmailApi.edit_subscribers(subscribers: [{email: 'test@email.com'}, {email: 'test@email.com'}], list: '4zcnmd2ski')
   ```
-  -require options:
+  >- require options:
   :subscribers,
   :list
-  -optional options:
+  >- optional options:
   :state,
   :confirm
 
@@ -242,7 +243,7 @@ FreshmailApi.send_sms(gsm: "123456789", text: "hello bro! :)")
   ```ruby
   FreshmailApi.update_subscriber_field({options})
   ```
-  -require options:
+  >- require options:
   :listHash,
   :tag,
   :value,
@@ -252,15 +253,15 @@ FreshmailApi.send_sms(gsm: "123456789", text: "hello bro! :)")
   ```ruby
   FreshmailApi.get_subscribers({options})
   ```
-  -require options:
-  :subscribers,
+  >- require options: 
+  :subscribers, 
   :list
 
   6.10 Delete subscribers:
   ```ruby
   FreshmailApi.delete_subscribers({options})
   ```
-  -require options:
+  >- require options:
   :subscribers,
   :list
 
@@ -268,42 +269,42 @@ FreshmailApi.send_sms(gsm: "123456789", text: "hello bro! :)")
   ```ruby
   FreshmailApi.block_subscribers({options})
   ```
-  -require options:
+  >- require options:
   :emails
 
   6.12 Unblock subscribers:
   ```ruby
   FreshmailApi.unblock_subscribers({options})
   ```
-  -require options:
+  >- require options:
   :emails
 
 
-7. Create account:
+##### 7) Create account:
 ```ruby
 FreshmailApi.create_account({options})
 ```
--require options:
+>- require options:
 :login,
 :password,
 :firstname,
 :lastname,
 :phone
--optional options:
+>- optional options:
 :company,
 :activation_email,
 :activation,
 :child_account
 
 
-8. Subscribers list:
+##### 8) Subscribers list:
   8.1 Create:
   ```ruby
   FreshmailApi.create_subscribers_list({options})
   ```
-  -require options:
+  >- require options:
   :name
-  -optional options:
+  >- optional options:
   :description,
   :custom_field
 
@@ -311,17 +312,17 @@ FreshmailApi.create_account({options})
   ```ruby
   FreshmailApi.update_subscribers_list({options})
   ```
-  -require options:
+  >- require options:
   :hash,
   :name
-  -optional options:
+  >- optional options:
   :description
 
   8.3 Delete:
   ```ruby
   FreshmailApi.delete_subscribers_list({options})
   ```
-  -require options:
+  >- require options:
   :hash
 
   8.4 Get lists:
@@ -333,10 +334,10 @@ FreshmailApi.create_account({options})
   ```ruby
   FreshmailApi.add_field_to_subscribers_list({options})
   ```
-  -require options:
+  >- require options:
   :hash,
   :name
-  -optional options:
+  >- optional options:
   :tag,
   :type
 
@@ -344,16 +345,16 @@ FreshmailApi.create_account({options})
   ```ruby
   FreshmailApi.get_subscribers_list_fields({options})
   ```
-  -require options:
+  >- require options:
   :hash
 
-9. Spam test:
+##### 9) Spam test:
 ```ruby
 FreshmailApi.check_spam_test({options})
 ```
--require options:
+>- require options:
 :subject
--optional options:
+>- optional options:
 :from,
 :from_name,
 :html or :text
