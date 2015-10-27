@@ -109,35 +109,35 @@ describe FreshmailApi do
       end
     end
 
-    describe '.edit_campaig' do
+    describe '.edit_campaign' do
       let(:path) { 'campaigns/edit' }
       it do
-        stubs.post(url) { |env| [ 200, {}, '{"status": "edit_campaig OK"}']}
-        expect(described_class.edit_campaig({data: 'data'})).to eq({ 'status' => 'edit_campaig OK' })
+        stubs.post(url) { |env| [ 200, {}, '{"status": "edit_campaign OK"}']}
+        expect(described_class.edit_campaign({data: 'data'})).to eq({ 'status' => 'edit_campaign OK' })
       end
     end
 
-    describe '.delete_campaig' do
+    describe '.delete_campaign' do
       let(:path) { 'campaigns/delete' }
       it do
-        stubs.post(url) { |env| [ 200, {}, '{"status": "delete_campaig OK"}']}
-        expect(described_class.delete_campaig({data: 'data'})).to eq({ 'status' => 'delete_campaig OK' })
+        stubs.post(url) { |env| [ 200, {}, '{"status": "delete_campaign OK"}']}
+        expect(described_class.delete_campaign({data: 'data'})).to eq({ 'status' => 'delete_campaign OK' })
       end
     end
 
-    describe '.send_test_campaig' do
+    describe '.send_test_campaign' do
       let(:path) { 'campaigns/sendTest' }
       it do
-        stubs.post(url) { |env| [ 200, {}, '{"status": "send_test_campaig OK"}']}
-        expect(described_class.send_test_campaig({data: 'data'})).to eq({ 'status' => 'send_test_campaig OK' })
+        stubs.post(url) { |env| [ 200, {}, '{"status": "send_test_campaign OK"}']}
+        expect(described_class.send_test_campaign({data: 'data'})).to eq({ 'status' => 'send_test_campaign OK' })
       end
     end
 
-    describe '.send_campaig' do
+    describe '.send_campaign' do
       let(:path) { 'campaigns/send' }
       it do
-        stubs.post(url) { |env| [ 200, {}, '{"status": "send_campaig OK"}']}
-        expect(described_class.send_campaig({data: 'data'})).to eq({ 'status' => 'send_campaig OK' })
+        stubs.post(url) { |env| [ 200, {}, '{"status": "send_campaign OK"}']}
+        expect(described_class.send_campaign({data: 'data'})).to eq({ 'status' => 'send_campaign OK' })
       end
     end
   end

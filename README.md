@@ -45,7 +45,7 @@ FreshmailApi.get_ping
 POST:
 ```ruby
 FreshmailApi.post_ping({data: 'some data'})
-``` 
+```
 
 ##### 2) Send mail:
 ```ruby
@@ -114,7 +114,7 @@ FreshmailApi.send_sms(gsm: "123456789", text: "hello bro! :)")
   :list or :group,
   :html or :text
   >- optional options:
-  :url, 
+  :url,
   :subject,
   :from_address,
   :from_name,
@@ -123,7 +123,7 @@ FreshmailApi.send_sms(gsm: "123456789", text: "hello bro! :)")
 
   5.1 Edit:
   ```ruby
-  FreshmailApi.edit_campaig({options})
+  FreshmailApi.edit_campaign({options})
   ```
   >- require options:
   :id_hash
@@ -142,14 +142,14 @@ FreshmailApi.send_sms(gsm: "123456789", text: "hello bro! :)")
 
   5.1 Delete:
   ```ruby
-  FreshmailApi.delete_campaig({options})
+  FreshmailApi.delete_campaign({options})
   ```
   >- require options:
   :hash
 
   5.1 Send test campaign:
   ```ruby
-  FreshmailApi.send_test_campaig(hash: '4zcnmd2ski', emails: ['test1@email.com', 'test2@email.com'])
+  FreshmailApi.send_test_campaign(hash: '4zcnmd2ski', emails: ['test1@email.com', 'test2@email.com'])
   ```
   >- require options:
   :hash,
@@ -159,7 +159,7 @@ FreshmailApi.send_sms(gsm: "123456789", text: "hello bro! :)")
 
   5.1 Send campaign:
   ```ruby
-  FreshmailApi.send_campaig({options})
+  FreshmailApi.send_campaign({options})
   ```
   >- require options:
   :hash
@@ -253,8 +253,8 @@ FreshmailApi.send_sms(gsm: "123456789", text: "hello bro! :)")
   ```ruby
   FreshmailApi.get_subscribers({options})
   ```
-  >- require options: 
-  :subscribers, 
+  >- require options:
+  :subscribers,
   :list
 
   6.10 Delete subscribers:

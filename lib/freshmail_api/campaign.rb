@@ -5,19 +5,19 @@ module FreshmailApi
       perform(:post, 'campaigns/create', data)
     end
 
-    def edit_campaig(data)
+    def edit_campaign(data)
       perform(:post, 'campaigns/edit', data)
     end
 
-    def delete_campaig(data)
+    def delete_campaign(data)
       perform(:post, 'campaigns/delete', data)
     end
 
-    def send_test_campaig(data)
+    def send_test_campaign(data)
       perform(:post, 'campaigns/sendTest', data)
     end
 
-    def send_campaig(data)
+    def send_campaign(data)
       perform(:post, 'campaigns/send', data)
     end
   end
