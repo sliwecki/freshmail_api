@@ -1,30 +1,23 @@
 ## FreshmailApi
-Rails gem for fast Freshmail integration
+Rails gem for fast integration your applications with Freshmail
 
-Documentation of Freshmail API http://freshmail.pl/wp-content/uploads/2013/04/REST_API_v1.0.19.pdf
-
-##### Do you like it ? Give me star ;) Thank you!
-
+Documentation of [Freshmail API](http://freshmail.pl/wp-content/uploads/2013/04/REST_API_v1.0.19.pdf)
 
 ## Installation
 
-Add this line to your application's Gemfile:
+The simplest way to install gem is to use [Bundler](http://bundler.io/).
 
 ```ruby
 gem 'freshmail_api'
 ```
 
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
+Or install the latest version of the gem with the following command...
 
     $ gem install freshmail_api
 
 ## Usage
 
-First, you must set up config (for example in config/initializers/freshmail_api.rb) and add following code:
+First, you must set up config (for example in config/initializers/freshmail_api.rb) with the following code:
 
 ```ruby
 FreshmailApi.configure do |config|
@@ -33,7 +26,7 @@ FreshmailApi.configure do |config|
 end
 ```
 
-Next, you should use available methods:
+Next, you can use available methods:
 
 ##### 1) Test your connection
 
