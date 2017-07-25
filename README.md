@@ -1,3 +1,5 @@
+<a href="https://codeclimate.com/github/sliwecki/freshmail_api"><img src="https://codeclimate.com/github/sliwecki/freshmail_api/badges/gpa.svg" /></a>
+
 ## FreshmailApi
 Rails gem for fast integration your applications with Freshmail
 
